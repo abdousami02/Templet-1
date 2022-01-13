@@ -1,4 +1,9 @@
-/* start main Relize */
+/* star variabls */
+:root{
+    --main-color: #2ecc71;
+}
+/* end variabls */
+/* start Globale */
 *{
     box-sizing: border-box;
 }
@@ -11,68 +16,130 @@ body{
     max-width: 1170px;
     margin:auto
 }
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* special componens */
 .clearFix{clear:both}
-/* end main Relize */
+
+/* end Globale */
 
 /* Star header */
-header .slider{
-    background-color: #eee;
-    height: 500px;
-    background: url("../img/1615368.jpg");
-    background-size:cover;
-    background-position: bottom;
-
+header nav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
-header .slider .intro{
-    text-align: center;
-    padding:200px;
+header nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+header h2{
     color: #fff;
 }
-header .slider h2{
-    margin:0 auto;
-    width:550px;
-    font-size: 45px;
-    border-top: 3px solid #fff;
-    border-bottom:3px solid #fff;
-    padding: 13px 0;
+header h2 span{
+    color: var(--main-color)
 }
-header .slider button{
-    background:none;
-    font-size: 22px;
-    color: #fff;
-    padding: 12px 32px;
-    border: 2px solid #fff;
-    margin-top: 31px;
-    cursor: pointer;
+header ul{
+    display: none;
+    justify-content: space-between;
 }
-
-header .navBar{
-    background-color: black;
-    color:#fff;
-    overflow: hidden;
+header nav i:hover + ul{
+    display: block;
+    position: absolute;
+    top: calc(100% - 10px);
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
 }
-header .navBar h2{float:left}
-header .navBar h2 span{color:#2ecc71}
-header .navBar ul{
-    list-style: none;
-    padding:0;
-    overflow: hidden;
-    float: right;
-}
-header .navBar ul li{
-    float: left;
-    padding:10px;
-    text-transform: uppercase;
-}
-header .navBar ul li a{
+header ul li a{
+    display: block;
+    padding: 10px 17px;
     color: #fff;
     text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 10px;
 }
-header .navBar ul li .active,
-header .navBar ul li a:hover{
-    color:#2ecc71
+header ul li a:hover,
+header ul li a.active{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
 }
-
+header nav i{
+    font-size: 24px;
+    color: #fff;
+    margin-right: 30px;
+}
+header .landing{
+    background-color: #eee;
+    background: url("../img/landing.jfif");
+    background-size: cover;
+    height: 90vh;
+    position: relative;
+    padding: 40px 0;
+}
+header .landing::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6)
+}
+header .landing .container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+header .landing h2{
+    margin:0 auto;
+    padding: 13px 0;
+    font-size: 36px;
+    border-top: 3px solid #fff;
+    border-bottom:3px solid #fff;
+    text-align: center;
+}
+header .landing button{
+    background: none;
+    padding: 12px 32px;
+    position: relative;
+    top: 100px;
+    font-size: 18px;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+header .landing button:hover{
+    background: var(--main-color);
+    border: 1px solid var(--main-color)
+}
+@media (min-width: 565px){
+    header nav i:hover + ul{
+        width: 300px;
+        right: 30px;
+        left: auto;
+    }
+}
+@media (min-width: 992px){
+    header nav ul{
+        display: flex;
+        width: auto;
+    }
+    header nav i{
+        display: none !important;
+    }
+}
 /* End Header */
 
 /* Star features */
